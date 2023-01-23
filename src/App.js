@@ -4,7 +4,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Newscomponent from './components/Newscomponent';
 // this is used for navigating betweeen pages without reloading
-import { BrowserRouter as Router, Routes, Route,HashRouter } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LoadingBar from 'react-top-loading-bar'
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
   return (
     <>
     {/* router opening tag */}
-    <HashRouter>
+    <Router>
       
         <Navbar title={title} setBgMode={setBgMode} bgMode={bgMode}/>
         {/* this is loading bar value that will change in update news function */}
@@ -61,7 +61,7 @@ function App() {
             <Route  exact path ="/health" element={<Newscomponent apiKey={apiKeyVal} setLoading={changeProgress} title={title} pagesize={6} bgMode={bgMode} country={"in"} category={"health"} key="health"/>}   />
             <Route  exact path ="/technology" element={<Newscomponent apiKey={apiKeyVal} setLoading={changeProgress} title={title} pagesize={6} bgMode={bgMode} country={"in"} category={"technology"} key="technology"/>}   />
         </Routes>
-    </HashRouter>
+    </Router>
     </>
   );
 }
